@@ -6,6 +6,8 @@
     <title>RVS GRUPP Oü</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
+    
 </head>
 <body>
 
@@ -17,6 +19,7 @@
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#contact">Контакты</a></li>
+                <li><a href="#galery">Галерея</a></li>
             </ul>
         </nav>
     </header>
@@ -25,6 +28,21 @@
         <h1 class="uniCenter">О нас</h1>
         <p>Мы занимаемся строительными работами с использованием тракторов, а также предоставляем услуги грузоперевозок. Надежность, профессионализм и качество - наши главные приоритеты.</p>
         <button id="learnMore">Подробнее</button>
+        
+<script>
+   function checkName() {
+      let name = document.getElementById("name").value;
+      let error = document.getElementById("error");
+      if (name === "") {
+         error.innerHTML = "Поле не может быть пустым!";
+      } else {
+         error.innerHTML = "";
+         alert("Привет, " + name + "!");
+      }
+   }
+</script>
+
+
     </section>
 
     <section id="services" class="container">
@@ -67,4 +85,5 @@
     </div>
 
 </body>
+
 </html>
