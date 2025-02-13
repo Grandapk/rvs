@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVS GRUPP Oü</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>RVS GRUPP oü
+     Строительная техника и грузоперевозки</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="container">
+        <h2>О нас</h2>
+        <p>Мы занимаемся строительными работами с использованием тракторов, а также предоставляем услуги грузоперевозок. Надежность, профессионализм и качество - наши главные приоритеты.</p>
+        <button id="learnMore">Подробнее</button>
+    </section>
+
+    <section id="services" class="container">
+        <h2>Наши услуги</h2>
+        <div class="service-list">
+            <div class="service">
+                <img src="tractor.jpg" alt="Работа трактора">
+                <h3>Земляные работы</h3>
+                <p>Разработка котлованов, планировка территории, расчистка участка.</p>
+            </div>
+            <div class="service">
+                <img src="truck.jpg" alt="Грузоперевозки">
+                <h3>Грузоперевозки</h3>
+                <p>Перевозка стройматериалов и тяжелой техники.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Свяжитесь с нами</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="email" id="email" placeholder="Ваш Email" required>
+            <textarea id="message" placeholder="Ваше сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Строительная техника и грузоперевозки. Все права защищены.</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>О нашей компании</h2>
+            <p>Мы работаем с 2010 года и предоставляем качественные услуги по всей стране. Наши специалисты обладают большим опытом в строительстве и перевозках.</p>
+        </div>
+    </div>
+
+</body>
+</html>
