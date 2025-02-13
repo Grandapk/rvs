@@ -11,9 +11,9 @@ body {
 }
 
 header {
-    background: #230980;
+    background: url('header-bg.jpg') center/cover no-repeat;
     color: white;
-    padding: 25px 0;
+    padding: 75px 0;
     text-align: center;
 }
 
@@ -22,6 +22,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 15px;
 }
 
 nav ul li a {
@@ -31,9 +32,10 @@ nav ul li a {
 }
 
 .container {
-    max-width: 800px;
+    
+    max-width: 80%;
     margin: 40px auto;
-    padding: 20px;
+    padding: 40px;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -43,12 +45,20 @@ nav ul li a {
     display: flex;
     justify-content: space-around;
     gap: 10px;
-    
+    align-items: stretch;
+    margin: 30px;
+
+
+}
+
+.service-list img {
+height: 100%;
+object-fit: cover;
 }
 
 .service {
     text-align: center;
-    width: 45%;
+    width: 75%;
 }
 
 .service img {
@@ -109,4 +119,9 @@ footer {
     float: right;
     font-size: 24px;
     cursor: pointer;
+}
+
+.uniCenter {
+    text-align: center;
+    margin: 10px
 }
