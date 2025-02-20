@@ -47,9 +47,7 @@ nav ul li a {
     gap: 10px;
     align-items: stretch;
     margin: 30px;
-
-
-}
+  }
 
 .service-list img {
 height: 100%;
@@ -125,3 +123,9 @@ footer {
     text-align: center;
     margin: 10px
 }
+@media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
