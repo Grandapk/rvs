@@ -41,28 +41,34 @@ nav ul li a {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-list {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    align-items: stretch;
-    margin: 30px;
-  }
-
-.service-list img {
-height: 100%;
-object-fit: cover;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* чтобы не было лишних отступов */
 }
 
+ .service-list {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        align-items: stretch;
+        margin: 30px;
+        flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку */
+    }
+    
+
+    .service img {
+        width: 100%;      /* по ширине контейнера */
+        height: 250px;    /* фиксируем высоту (подбирайте под себя) */
+        object-fit: cover; /* заполняет контейнер, обрезая край, чтобы не растягивать картинку по ширине/высоте */
+        display: block;   
+      }
 .service {
-    text-align: center;
-    width: 75%;
+    width: 45%; /* Ширина каждого блока на больших экранах */
+    box-sizing: border-box; /* Чтобы padding/бордюры учитывались корректно */
 }
 
-.service img {
-    width: 100%;
-    border-radius: 10px;
-}
+
 
 button {
     background: #007bff;
@@ -124,8 +130,8 @@ footer {
     margin: 10px
 }
 @media (max-width: 600px) {
-    nav ul {
-      flex-direction: column;
-      align-items: center;
+    .service {
+      width: 100%; /* На экранах <=600px каждый .service тянется на всю ширину */
+      margin-bottom: 20px;
     }
   }
