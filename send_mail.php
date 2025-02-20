@@ -1,6 +1,6 @@
 <?php
 // ВАШ EMAIL — сюда будут приходить сообщения:
-$to = "ВАШ_EMAIL@DOMAIN.COM";
+$to = "grandapk@gmail.com";
 
 // Тема письма
 $subject = "Сообщение с сайта RVS Grupp";
