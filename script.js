@@ -1,30 +1,43 @@
-// Модальное окно "Подробнее"
-document.getElementById("learnMore").addEventListener("click", function () {
-    document.getElementById("modal").style.display = "block";
-});
-
-document.querySelector(".close").addEventListener("click", function () {
-    document.getElementById("modal").style.display = "none";
-});
-
-window.onclick = function (event) {
-    if (event.target === document.getElementById("modal")) {
-        document.getElementById("modal").style.display = "none";
-    }
-};
-
 // Форма обратной связи
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let formMessage = document.getElementById("formMessage");
 
-    if (name && email && message) {
-        document.getElementById("formMessage").textContent = "Спасибо! Мы свяжемся с вами.";
-        document.getElementById("contactForm").reset();
-    } else {
-        document.getElementById("formMessage").textContent = "Пожалуйста, заполните все поля.";
+    // Проверяем заполненность полей
+    if (!name || !email || !message) {
+        formMessage.textContent = "Пожалуйста, заполните все поля.";
+        return;
     }
+
+    // Отправляем данные на сервер
+    fetch("send_mail.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" 
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message
+        })
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === "OK") {
+            // Если в PHP-скрипте возвращаем "OK" — значит письмо отправлено
+            formMessage.textContent = "Спасибо! Мы свяжемся с вами.";
+            document.getElementById("contactForm").reset(); // сбрасываем поля формы
+        } else {
+            // Показываем ошибку, вернувшуюся из PHP
+            formMessage.textContent = data;
+        }
+    })
+    .catch(error => {
+        // Если произошла сетевая ошибка или ещё что-то
+        formMessage.textContent = "Ошибка при отправке запроса: " + error;
+    });
 });
